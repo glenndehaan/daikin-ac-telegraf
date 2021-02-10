@@ -1,5 +1,7 @@
 # Daikin AC Telegraf
 
+A Daikin AC Telegraf input plugin
+
 ## Structure
 - NodeJS
 - daikin-controller
