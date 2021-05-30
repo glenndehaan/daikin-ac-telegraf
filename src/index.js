@@ -21,7 +21,7 @@ const run = async () => {
         if(typeof result !== "undefined") {
             // Get the device info
             const data = await daikin.getInfo(result);
-            console.log(`daikinAc,ip=${device},name=${data.basic.name},macAddress=${data.basic.macAddress} power=${data.status.power ? 1 : 0},targetTemperature=${isNaN(data.status.targetTemperature) ? 0 : data.status.targetTemperature},fanRate=${data.status.fanRate},indoorTemperature=${data.sensor.indoorTemperature},outdoorTemperature=${data.sensor.outdoorTemperature},todayRuntime=${data.power.todayRuntime}`);
+            console.log(`daikinAc,ip=${device},name=${data.basic.name},macAddress=${data.basic.macAddress} power=${data.status.power ? 1 : 0},targetTemperature=${isNaN(data.status.targetTemperature) ? 0 : data.status.targetTemperature},fanRate=${typeof data.status.fanRate !== "number" ? 0 : data.status.fanRate},indoorTemperature=${data.sensor.indoorTemperature},outdoorTemperature=${data.sensor.outdoorTemperature},todayRuntime=${data.power.todayRuntime}`);
         }
     }
 };
